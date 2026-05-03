@@ -32,6 +32,12 @@
       color: #1a1a1a;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
     .nav-link {
       font-size: 14px;
       color: #555;
@@ -40,6 +46,21 @@
 
     .nav-link:hover {
       color: #1a1a1a;
+    }
+
+    .btn-nav {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: #1a1a1a;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: background 0.2s;
+    }
+
+    .btn-nav:hover {
+      background: #333;
     }
 
     /* floating dots */
@@ -298,10 +319,14 @@
 
   <nav>
     <span class="logo">Practical AI for Realtors</span>
-    <a href="mailto:themaker@illectricsheep.com" class="nav-link">Contact</a>
+    <div class="nav-links">
+      <a href="#community" class="nav-link">Community</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#waitlist" class="btn-nav">Join waitlist</a>
+    </div>
   </nav>
 
-  <div class="hero-wrapper">
+  <div class="hero-wrapper" id="waitlist">
     <div class="dot dot-1"></div>
     <div class="dot dot-2"></div>
     <div class="dot dot-3"></div>
@@ -323,7 +348,7 @@
 
   <hr>
 
-  <div class="section">
+  <div class="section" id="community">
     <div class="split">
       <div class="split-left">
         <p class="section-label">What it's for</p>
@@ -342,7 +367,7 @@
 
   <hr>
 
-  <div class="about">
+  <div class="about" id="about">
     <div class="about-text">
       <h2>Built by David Simpson</h2>
       <p>Calgary realtor. Filmmaker. Twenty years teaching in Japan. Now helping realtors understand AI well enough to actually use it, not just talk about it. This isn't a course. It's a system you build and own.</p>

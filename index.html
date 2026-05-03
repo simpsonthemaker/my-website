@@ -8,213 +8,424 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #F5F0E8;
+      background-color: #f0f0ef;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      color: #1a1a1a;
+      color: #111;
       min-height: 100vh;
     }
 
+    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 28px 48px;
+      padding: 24px 48px;
     }
 
-    .logo { font-size: 15px; font-weight: 600; letter-spacing: -0.2px; color: #1a1a1a; }
-
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-
-    .nav-link { font-size: 14px; color: #555; text-decoration: none; }
-    .nav-link:hover { color: #1a1a1a; }
-
-    .btn-nav {
-      font-size: 14px; font-weight: 600; color: #fff;
-      background: #1a1a1a; text-decoration: none;
-      padding: 10px 20px; border-radius: 50px; transition: background 0.2s;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      text-decoration: none;
     }
-    .btn-nav:hover { background: #333; }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      background: #111;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover { color: #111; }
 
     .lang-toggle {
-      font-size: 13px; font-weight: 500; color: #555;
-      background: none; border: 1.5px solid #ccc;
-      padding: 7px 14px; border-radius: 50px; cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: #666;
+      background: none;
+      border: 1.5px solid #ccc;
+      padding: 7px 14px;
+      border-radius: 50px;
+      cursor: pointer;
       transition: all 0.2s;
     }
-    .lang-toggle:hover { border-color: #1a1a1a; color: #1a1a1a; }
 
-    .hero-wrapper { position: relative; overflow: hidden; }
+    .lang-toggle:hover { border-color: #111; color: #111; }
 
-    .dot { position: absolute; border-radius: 50%; opacity: 0.85; }
-    .dot-1 { width: 52px; height: 52px; background: #4A7CF7; top: 60px; left: 18%; }
-    .dot-2 { width: 38px; height: 38px; background: #E8674A; top: 120px; right: 22%; }
-    .dot-3 { width: 28px; height: 28px; background: #E8A4C0; top: 200px; right: 12%; }
-    .dot-4 { width: 44px; height: 44px; background: #e0dbd0; top: 80px; left: 8%; }
-
+    /* HERO */
     .hero {
-      text-align: center; padding: 80px 24px 100px;
-      max-width: 820px; margin: 0 auto; position: relative; z-index: 1;
-    }
-
-    .eyebrow {
-      font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; color: #777; margin-bottom: 28px;
+      text-align: center;
+      padding: 100px 24px 80px;
+      max-width: 860px;
+      margin: 0 auto;
     }
 
     h1 {
-      font-size: clamp(42px, 7vw, 76px); font-weight: 800;
-      line-height: 1.05; letter-spacing: -2px; color: #111; margin-bottom: 24px;
-    }
-
-    .subtitle {
-      font-size: 18px; line-height: 1.6; color: #555;
-      max-width: 520px; margin: 0 auto 48px;
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -3px;
+      color: #111;
+      margin-bottom: 48px;
     }
 
     .waitlist-form {
-      display: flex; gap: 12px; justify-content: center;
-      flex-wrap: wrap; max-width: 520px; margin: 0 auto;
+      display: flex;
+      align-items: center;
+      max-width: 480px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1.5px solid #ddd;
+      border-radius: 50px;
+      padding: 6px 6px 6px 20px;
+      gap: 8px;
     }
 
     .waitlist-form input[type="email"] {
-      flex: 1; min-width: 240px; padding: 14px 20px;
-      border: 1.5px solid #ddd; border-radius: 50px; font-size: 15px;
-      background: #fff; color: #1a1a1a; outline: none; transition: border-color 0.2s;
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: transparent;
+      color: #111;
+      min-width: 0;
     }
-    .waitlist-form input[type="email"]:focus { border-color: #4A7CF7; }
+
     .waitlist-form input[type="email"]::placeholder { color: #aaa; }
 
     .btn-primary {
-      padding: 14px 28px; background: #4A7CF7; color: #fff;
-      border: none; border-radius: 50px; font-size: 15px; font-weight: 600;
-      cursor: pointer; white-space: nowrap; transition: background 0.2s;
-    }
-    .btn-primary:hover { background: #3366e0; }
-
-    .fine-print { margin-top: 16px; font-size: 13px; color: #999; }
-
-    .section { max-width: 960px; margin: 0 auto; padding: 80px 48px; }
-
-    .section-label { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
-    .section-sub { font-size: 16px; color: #666; margin-bottom: 40px; }
-
-    .cards {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 16px; max-width: 540px; margin-left: auto;
+      padding: 12px 22px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
     }
 
-    .card {
-      padding: 22px 28px; border-radius: 14px; font-size: 15px; font-weight: 600;
-      border: 1.5px solid #e0dbd0; background: #fff; color: #1a1a1a;
+    .btn-primary:hover { background: #333; }
+
+    .success-msg {
+      display: none;
+      margin-top: 20px;
+      font-size: 15px;
+      color: #555;
     }
-    .card.highlight { background: #4A7CF7; color: #fff; border-color: #4A7CF7; }
-    .card.soft { background: #E8A4C0; color: #1a1a1a; border-color: #E8A4C0; }
 
-    .split { display: flex; align-items: flex-start; gap: 60px; }
-    .split-left { flex: 1; }
-    .split-right { flex: 1; }
+    /* PRODUCT PREVIEW */
+    .preview-wrapper {
+      max-width: 900px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+    }
 
-    hr { border: none; border-top: 1px solid #e0dbd0; max-width: 960px; margin: 0 auto; }
+    .preview-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    }
 
+    .preview-bar {
+      background: #f7f7f7;
+      border-bottom: 1px solid #eee;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot-bar {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
+    }
+
+    .preview-body {
+      padding: 40px 48px;
+    }
+
+    .preview-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #aaa;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .feature-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .feature-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+
+    .feature-row:last-child { border-bottom: none; }
+
+    .feature-name { color: #888; width: 140px; }
+
+    .feature-value {
+      flex: 1;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: #111;
+      color: #fff;
+    }
+
+    .badge.green { background: #22c55e; }
+
+    /* SECTION */
+    .section {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 48px;
+    }
+
+    .section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .feature-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
     .about {
-      max-width: 960px; margin: 0 auto; padding: 80px 48px;
-      display: flex; gap: 60px; align-items: flex-start;
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 48px;
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid #e8e8e8;
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
     }
-    .about-text { flex: 1; }
-    .about-text h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
-    .about-text p { font-size: 16px; line-height: 1.7; color: #555; }
 
     .about-photo {
-      width: 160px; height: 160px; border-radius: 50%; background: #e0dbd0;
-      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-      font-size: 13px; color: #999; text-align: center; padding: 12px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #e8e8e8;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
     }
 
+    .about-text h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
     footer {
-      border-top: 1px solid #e0dbd0; padding: 32px 48px;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 13px; color: #999;
+      border-top: 1px solid #e0e0e0;
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #aaa;
     }
 
-    .success-msg { display: none; margin-top: 16px; font-size: 15px; color: #4A7CF7; font-weight: 500; }
+    footer a { color: #aaa; text-decoration: none; }
+    footer a:hover { color: #111; }
 
     @media (max-width: 680px) {
       nav { padding: 20px 24px; }
       .nav-links { gap: 16px; }
-      .section { padding: 60px 24px; }
-      .split { flex-direction: column; gap: 32px; }
-      .cards { margin-left: 0; }
-      .about { flex-direction: column; padding: 60px 24px; }
-      footer { flex-direction: column; gap: 8px; text-align: center; }
-      .dot-1 { left: 5%; }
-      .dot-4 { display: none; }
+      .hero { padding: 60px 24px 40px; }
+      .preview-wrapper { padding: 0 16px; }
+      .preview-body { padding: 24px; }
+      .section { padding: 0 24px; margin: 60px auto; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .about { flex-direction: column; padding: 32px 24px; gap: 24px; margin: 0 24px 60px; }
+      footer { flex-direction: column; gap: 8px; padding: 24px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="logo" data-en="Practical AI for Realtors" data-ja="リアルターのための実践的AI">Practical AI for Realtors</span>
+    <a href="/" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+      </div>
+      <span data-en="Practical AI for Realtors" data-ja="リアルターのための実践的AI">Practical AI for Realtors</span>
+    </a>
     <div class="nav-links">
-      <a href="#community" class="nav-link" data-en="Community" data-ja="コミュニティ">Community</a>
+      <a href="#features" class="nav-link" data-en="What's included" data-ja="内容">What's included</a>
       <a href="#about" class="nav-link" data-en="About" data-ja="について">About</a>
       <button class="lang-toggle" onclick="toggleLang()">日本語</button>
-      <a href="#waitlist" class="btn-nav" data-en="Join waitlist" data-ja="登録する">Join waitlist</a>
     </div>
   </nav>
 
-  <div class="hero-wrapper" id="waitlist">
-    <div class="dot dot-1"></div>
-    <div class="dot dot-2"></div>
-    <div class="dot dot-3"></div>
-    <div class="dot dot-4"></div>
+  <div class="hero">
+    <h1 data-en="The smarter way to run your real estate business." data-ja="不動産業をスマートに動かす、新しい方法。">The smarter way to run your real estate business.</h1>
 
-    <div class="hero">
-      <p class="eyebrow" data-en="Early Access" data-ja="先行登録受付中">Early Access</p>
-      <h1 data-en="AI tools built for realtors, by a realtor." data-ja="リアルターが作った、リアルターのためのAIツール。">AI tools built for realtors, by a realtor.</h1>
-      <p class="subtitle" data-en="Join the waitlist for a practical system that helps you run your business smarter, without getting lost in the tech." data-ja="テクノロジーに迷わず、ビジネスをスマートに動かすための実践的なシステムへ。ウェイトリストに登録してください。">Join the waitlist for a practical system that helps you run your business smarter, without getting lost in the tech.</p>
-
-      <form class="waitlist-form" onsubmit="handleSubmit(event)">
-        <input type="email" placeholder="your@email.com" required>
-        <button type="submit" class="btn-primary" data-en="Join the waitlist" data-ja="登録する">Join the waitlist</button>
-      </form>
-      <p class="fine-print" data-en="No spam. Just updates when it matters." data-ja="スパムなし。大事なときだけお知らせします。">No spam. Just updates when it matters.</p>
-      <p class="success-msg" id="success" data-en="You're on the list. Talk soon." data-ja="登録完了です。近いうちに連絡します。">You're on the list. Talk soon.</p>
-    </div>
+    <form class="waitlist-form" onsubmit="handleSubmit(event)">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit" class="btn-primary" data-en="Join the waitlist" data-ja="登録する">Join the waitlist</button>
+    </form>
+    <p class="success-msg" id="success" data-en="You're on the list. Talk soon." data-ja="登録完了です。近いうちに連絡します。">You're on the list. Talk soon.</p>
   </div>
 
-  <hr>
-
-  <div class="section" id="community">
-    <div class="split">
-      <div class="split-left">
-        <p class="section-label" data-en="What it's for" data-ja="何のために">What it's for</p>
-        <p class="section-sub" data-en="Real tools for real estate, not theory." data-ja="理論ではなく、現場で使えるツール。">Real tools for real estate, not theory.</p>
+  <div class="preview-wrapper">
+    <div class="preview-card">
+      <div class="preview-bar">
+        <div class="dot-bar"></div>
+        <div class="dot-bar"></div>
+        <div class="dot-bar"></div>
       </div>
-      <div class="split-right">
-        <div class="cards">
-          <div class="card" data-en="Daily briefings" data-ja="日次ブリーフィング">Daily briefings</div>
-          <div class="card soft" data-en="Client follow-ups" data-ja="クライアントフォロー">Client follow-ups</div>
-          <div class="card highlight" data-en="Your own AI system" data-ja="あなた専用のAIシステム">Your own AI system</div>
-          <div class="card" data-en="CMA analysis" data-ja="CMA分析">CMA analysis</div>
+      <div class="preview-body">
+        <p class="preview-label" data-en="Your daily briefing" data-ja="毎日のブリーフィング">Your daily briefing</p>
+        <div class="feature-rows">
+          <div class="feature-row">
+            <span class="feature-name" data-en="Market pulse" data-ja="市場動向">Market pulse</span>
+            <span class="feature-value" data-en="Calgary NW inventory down 12% this week" data-ja="今週のカルガリーNW在庫は12%減">Calgary NW inventory down 12% this week</span>
+            <span class="badge green" data-en="Live" data-ja="ライブ">Live</span>
+          </div>
+          <div class="feature-row">
+            <span class="feature-name" data-en="Follow-ups" data-ja="フォローアップ">Follow-ups</span>
+            <span class="feature-value" data-en="3 clients due today" data-ja="本日フォローアップ3件">3 clients due today</span>
+            <span class="badge" data-en="Ready" data-ja="準備完了">Ready</span>
+          </div>
+          <div class="feature-row">
+            <span class="feature-name" data-en="CMA queue" data-ja="CMAキュー">CMA queue</span>
+            <span class="feature-value" data-en="2 analyses pending" data-ja="分析2件待ち">2 analyses pending</span>
+            <span class="badge" data-en="Draft" data-ja="下書き">Draft</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <hr>
+  <div class="section" id="features">
+    <h2 data-en="Built for how realtors actually work." data-ja="リアルターの現場に合わせて作られています。">Built for how realtors actually work.</h2>
+    <p data-en="Not a course. Not a chatbot. A system you build, own, and run every day." data-ja="コースでもチャットボットでもありません。自分で構築し、毎日使うシステムです。">Not a course. Not a chatbot. A system you build, own, and run every day.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3 data-en="Daily briefings" data-ja="日次ブリーフィング">Daily briefings</h3>
+        <p data-en="Start every morning knowing exactly what needs your attention, pulled from your own data." data-ja="毎朝、自分のデータから必要なことを把握してスタート。">Start every morning knowing exactly what needs your attention, pulled from your own data.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-en="Client follow-ups" data-ja="クライアントフォロー">Client follow-ups</h3>
+        <p data-en="Never let a lead go cold. AI drafts the message, you decide whether to send it." data-ja="見込み客を逃さない。AIが下書きし、あなたが判断する。">Never let a lead go cold. AI drafts the message, you decide whether to send it.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-en="CMA analysis" data-ja="CMA分析">CMA analysis</h3>
+        <p data-en="Drop in comps, get a structured pricing breakdown in seconds." data-ja="比較データを入力するだけで、価格分析が数秒で完成。">Drop in comps, get a structured pricing breakdown in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-en="Your own AI system" data-ja="あなた専用のAIシステム">Your own AI system</h3>
+        <p data-en="Not renting someone else's tool. You understand it, you control it, you own it." data-ja="他のツールを借りるのではなく、自分で理解し、管理し、所有するシステム。">Not renting someone else's tool. You understand it, you control it, you own it.</p>
+      </div>
+    </div>
+  </div>
 
   <div class="about" id="about">
+    <div class="about-photo" data-en="Your photo here" data-ja="写真をここに">Your photo here</div>
     <div class="about-text">
       <h2 data-en="Built by David Simpson" data-ja="デビッド・シンプソンが作りました">Built by David Simpson</h2>
-      <p data-en="Calgary realtor. Filmmaker. Twenty years teaching in Japan. Now helping realtors understand AI well enough to actually use it, not just talk about it. This isn't a course. It's a system you build and own." data-ja="カルガリーの不動産業者。映像作家。日本で20年間教鞭を執る。今は、リアルターがAIを話題にするだけでなく、実際に使えるよう支援しています。これはコースではありません。自分で構築し、自分のものにするシステムです。">Calgary realtor. Filmmaker. Twenty years teaching in Japan. Now helping realtors understand AI well enough to actually use it, not just talk about it. This isn't a course. It's a system you build and own.</p>
+      <p data-en="Calgary realtor. Filmmaker. Twenty years teaching in Japan. Now helping realtors understand AI well enough to actually use it, not just talk about it. This isn't a course. It's a system you build and own." data-ja="カルガリーの不動産業者。映像作家。日本で20年間教鞭を執る。今は、リアルターがAIを実際に使えるよう支援しています。これはコースではなく、自分で構築し、所有するシステムです。">Calgary realtor. Filmmaker. Twenty years teaching in Japan. Now helping realtors understand AI well enough to actually use it, not just talk about it. This isn't a course. It's a system you build and own.</p>
     </div>
-    <div class="about-photo" data-en="Your photo here" data-ja="写真をここに">Your photo here</div>
   </div>
 
   <footer>
     <span data-en="Practical AI for Realtors — Calgary, AB" data-ja="リアルターのための実践的AI — カルガリー、アルバータ州">Practical AI for Realtors — Calgary, AB</span>
-    <a href="mailto:themaker@illectricsheep.com" style="color:#999; text-decoration:none;">themaker@illectricsheep.com</a>
+    <a href="mailto:themaker@illectricsheep.com">themaker@illectricsheep.com</a>
   </footer>
 
   <script>
@@ -222,8 +433,7 @@
 
     function toggleLang() {
       currentLang = currentLang === 'en' ? 'ja' : 'en';
-      const btn = document.querySelector('.lang-toggle');
-      btn.textContent = currentLang === 'en' ? '日本語' : 'English';
+      document.querySelector('.lang-toggle').textContent = currentLang === 'en' ? '日本語' : 'English';
       document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute('data-' + currentLang);
       });
